@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -45,6 +46,17 @@ public class TestBase extends AbstractTestNGCucumberTests{
 			driver = new FirefoxDriver() ;
 
 		}
+		
+		else if (BrowserName.equalsIgnoreCase("Chrome-headless")) {
+			
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Drivers/chromedriver.exe") ;
+			ChromeOptions options = new ChromeOptions() ;
+			options.addArguments("--headless") ;
+			options.addArguments("--window--size=1920,1080");
+			driver = new ChromeDriver(options) ;
+			
+		}
+			
 		
 		driver.navigate().to("https://demo.nopcommerce.com") ;
 		

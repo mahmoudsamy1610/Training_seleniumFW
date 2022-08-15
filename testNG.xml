@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite  name="Regression">
-<parameter name = "browser" value = "Chrome" ></parameter>
+<parameter name = "browser" value = "Chrome-headless" ></parameter>
   <test name="regression testing"> <!--preserve-order= "true" [this will be applied inside the tag when we want to run the files in order --> 
     <classes>
     	<class name="Tests.TestBase"/>
